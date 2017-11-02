@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  today = new Date(); 
-  switch: boolean = false; 
+  today = null; 
+  tz = null; 
+  timeZone(zone){
+    this.today = new Date(); 
+    this.tz = zone; 
+    if(zone===null){
+      this.today = null; 
+    }
+  }
   
 }

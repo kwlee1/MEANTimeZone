@@ -1,7 +1,7 @@
 <h1>US Time Zone Display</h1>
-<button [ngClass]="{'yellow':switch}">PST</button>
-<button [ngClass]="{'yellow':switch}">MST</button>
-<button [ngClass]="{'yellow':switch}">CST</button>
-<button [ngClass]="{'yellow':switch}">EST</button>
-<button>Clear</button>
-<div id='time'>{{today | date:'medium':'CST'}}</div>
+<button (click)="timeZone('PST')" [ngClass]="{'yellow':this.tz==='PST'}">PST</button>
+<button (click)="timeZone('MST')" [ngClass]="{'yellow':this.tz==='MST'}">MST</button>
+<button (click)="timeZone('CST')" [ngClass]="{'yellow':this.tz==='CST'}">CST</button>
+<button (click)="timeZone('EST')" [ngClass]="{'yellow':this.tz==='EST'}">EST</button>
+<button (click)="timeZone(null)">Clear</button>
+<div id='time'>{{today | date:'medium':this.tz}}</div>
